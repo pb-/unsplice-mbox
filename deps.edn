@@ -3,8 +3,7 @@
   jakarta.mail/jakarta.mail-api {:mvn/version "2.1.2"}
   org.eclipse.angus/angus-mail {:mvn/version "2.0.2"}
   commons-codec/commons-codec {:mvn/version "1.16.0"}
-  dev.baecher.multipart/streaming-multipart-parser {:mvn/version "0.10.0"}
-  com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.0.5"}}
+  dev.baecher.multipart/streaming-multipart-parser {:mvn/version "0.10.0"}}
  :paths ["src" "resources"]
  :aliases {:nrepl
            {:extra-deps
@@ -13,6 +12,9 @@
            :build
            {:deps {io.github.clojure/tools.build {:mvn/version "0.9.3"}}
             :ns-default build}
+           :profile
+           {:extra-deps
+            {com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.0.5"}}}
            :test
            {:extra-paths ["test"]
             :extra-deps
