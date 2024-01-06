@@ -1,0 +1,22 @@
+{:deps
+ {org.clojure/clojure {:mvn/version "1.11.1"}
+  jakarta.mail/jakarta.mail-api {:mvn/version "2.1.2"}
+  org.eclipse.angus/angus-mail {:mvn/version "2.0.2"}
+  commons-codec/commons-codec {:mvn/version "1.16.0"}
+  dev.baecher.multipart/streaming-multipart-parser {:mvn/version "0.10.0"}
+  com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.0.5"}}
+ :paths ["src" "resources"]
+ :aliases {:nrepl
+           {:extra-deps
+            {cider/cider-nrepl {:mvn/version "0.26.0"}}
+            :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+           :build
+           {:deps {io.github.clojure/tools.build {:mvn/version "0.9.3"}}
+            :ns-default build}
+           :test
+           {:extra-paths ["test"]
+            :extra-deps
+            {io.github.cognitect-labs/test-runner
+             {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+            :main-opts ["-m" "cognitect.test-runner"]
+            :exec-fn cognitect.test-runner.api/test}}}
