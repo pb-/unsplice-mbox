@@ -8,7 +8,10 @@
            [java.security MessageDigest DigestOutputStream]
            [jakarta.mail.internet MimeUtility]
            [dev.baecher.io BoundaryInputStream]
-           [org.apache.commons.codec.binary Base64InputStream]))
+           [org.apache.commons.codec.binary Base64InputStream])
+  (:gen-class))
+
+(def version "0.9.0")
 
 (def cr-lf (.getBytes "\r\n" "ASCII"))
 (def dash-dash (.getBytes "--" "ASCII"))
@@ -198,6 +201,7 @@
             (println "finished" mail-number "mails")))))))
 
 (defn -main [& args]
+  (println "unsplice-mbox " version)
   (when-not (= 2 (count args))
     (println "arguments required: INPUT-FILE OUTPUT-FILE")
     (System/exit -1))
