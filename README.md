@@ -9,7 +9,7 @@ unsplice-mbox was primarily tested with a single Gmail takeout containing about 
 
 ## Download/installation
 
-You can get a [prebuilt release](releases/) (Java JRE required) or build it yourself (requires a JDK and Clojure):
+You can get a [prebuilt release](https://github.com/pb-/unsplice-mbox/releases) (Java JRE required) or build it yourself (requires a JDK and Clojure):
 
 ```shell
 make release
